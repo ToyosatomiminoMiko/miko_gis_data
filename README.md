@@ -28,7 +28,7 @@ python3 ~/.dsh/skills/miko-gis-data/gis_data.py all       # download -> publish 
 
 ## 数据根
 
-默认 `~/miko_gis_data/data`, 可用 `--data-root PATH` 或环境变量 `MIKO_GIS_DATA_ROOT`
+默认 `~/miko_skill_gisdata/data`, 可用 `--data-root PATH` 或环境变量 `MIKO_GIS_DATA_ROOT`
 覆盖. 数据根里是下载原样的原始文件与 `<数据根>/manifest.json`; 数据本身不进本仓库.
 
 ## 仓库内容

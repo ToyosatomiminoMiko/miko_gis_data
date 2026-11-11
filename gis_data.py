@@ -19,7 +19,7 @@ REGIONS 两个常量里, 改数据源只改一处.
     python3 ~/.dsh/skills/miko-gis-data/gis_data.py [--data-root PATH] publish [--check]
     python3 ~/.dsh/skills/miko-gis-data/gis_data.py [--data-root PATH] all
 
-数据根默认是 ``~/miko_gis_data/data``, 可用 ``--data-root`` 或环境变量
+数据根默认是 ``~/miko_skill_gisdata/data``, 可用 ``--data-root`` 或环境变量
 ``MIKO_GIS_DATA_ROOT`` 覆盖; 渲染仓根 ``config.toml`` 的 ``data_root`` 必须指向同一处.
 坑与约定(ETOPO 经度 0~360, 续传探测, 版本文件, Overpass 完整性标记等)见技能
 ``SKILL.md``. 本脚本依赖系统 ``wget`` 与 ``unzip``, Python 侧只有标准库.
@@ -48,7 +48,7 @@ from pathlib import Path
 # ============================
 # 数据根默认值: 用户目录下的固定位置, 与仓库路径无关; 换位置用 --data-root 或
 # 环境变量 MIKO_GIS_DATA_ROOT, 不必改代码.
-DEFAULT_DATA_ROOT = Path.home() / "miko_gis_data" / "data"
+DEFAULT_DATA_ROOT = Path.home() / "miko_skill_gisdata" / "data"
 DATA_ROOT_ENV = "MIKO_GIS_DATA_ROOT"
 # 提示里给出的命令前缀: 与技能安装位置一致(技能目录 ~/.dsh/skills/miko-gis-data/).
 SKILL_SCRIPT = "python3 ~/.dsh/skills/miko-gis-data/gis_data.py"

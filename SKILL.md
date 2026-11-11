@@ -27,7 +27,7 @@ all                      # 依次 download -> publish -> check, 任一步失败�
 选项:
 
 - `--data-root PATH`: 数据根; 未给时读环境变量 `MIKO_GIS_DATA_ROOT`, 再缺省用
-  `~/miko_gis_data/data`.
+  `~/miko_skill_gisdata/data`.
 - `--group {all,america_army,myanmar,ussr,ukraine,volga}`: 只处理一个区域; `publish` 接受但
   忽略它, 清单总是整份生成.
 - `download` 追加: `--region {all,myanmar,northern-shan}` 选缅甸 ETOPO 子集; `--stride N`
@@ -54,7 +54,7 @@ python3 ~/.dsh/skills/miko-gis-data/gis_data.py publish
 <数据根>/<region>/raw/                                            下载原样(单文件/zip/解压目录)
 ```
 
-- 数据根默认 `~/miko_gis_data/data`; 换位置用 `--data-root` 或 `MIKO_GIS_DATA_ROOT`.
+- 数据根默认 `~/miko_skill_gisdata/data`; 换位置用 `--data-root` 或 `MIKO_GIS_DATA_ROOT`.
 - 渲染仓 `Cartopy_file` 在仓根 `config.toml` 写 `data_root = "<数据根>"`, 只读
   `manifest.json` 与它指向的文件, 不 import 本技能, 不写回数据根.
 - 清单只含相对 `<数据根>/<region>/` 的路径, 不含时间戳与绝对路径, 所以数据根可整体搬运;
