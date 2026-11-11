@@ -11,7 +11,7 @@ DSH 技能: 下载, 校验并发布地图原始数据与清单 `manifest.json`, 
 技能目录固定为 `~/.dsh/skills/miko-gis-data` (DSH 从这里发现技能):
 
 ```sh
-git clone https://github.com/ToyosatomiminoMiko/miko_gis_data.git ~/.dsh/skills/miko-gis-data
+git clone https://github.com/ToyosatomiminoMiko/miko_skill_gisdata.git ~/.dsh/skills/miko-gis-data
 ```
 
 ## 命令
