@@ -194,3 +194,24 @@ python3 "$S" check --group ukraine
   `Cartopy_file`, 由它的 `prepare`/render 完成, 产物不写回数据根.
 - 本技能不 import cartopy/matplotlib/GIS 库, 不生成任何派生文件.
 - 数据换版会改变渲染产物; 那属于两仓同步改动, 不能只在数据侧改期望值.
+
+## 自我演进(每次使用后)
+
+本技能是独立 git 仓库:`https://github.com/ToyosatomiminoMiko/miko_skill_gisdata`(分支 `main`)。
+每次用它完成一个任务后,花一分钟复盘,把这次学到的东西沉淀回技能仓,让它比上次更强:
+
+1. **复盘**:本次哪些步骤是临时摸索出来的?哪些坑下次还会踩?哪些参数、URL 模板或验收口径值得写下来?
+2. **沉淀**:只把**可复用**的成果落盘(`gis_data.py` 的通用化、`SKILL.md` 的流程与踩坑、`README.md`
+   的安装/依赖说明);数据文件本身不进 git(换机器重跑 `all` 即可恢复)。
+3. **自检**:`python3 gis_data.py publish --check`;改了 `SOURCES` 或数据源版本再跑
+   `python3 gis_data.py check`。不通过先修,别把坏状态提交。
+4. **提交并推送**:`bash scripts/git_sync.sh "<feat|fix|docs|example>: 一句话"`。
+   工作区干净时脚本自动跳过;推送失败会保留本地提交并打印重试命令(代理
+   `127.0.0.1:7897` 未启动时脚本自动直连重试)。
+5. **边界**:不改变技能的对外契约(命令名、参数、`manifest.json` 结构、区域/数据集 id),除非本次
+   任务明确要求;一类改动一个提交,提交信息写清"为什么"。
+
+没有产生可复用改进就不提交:要自我迭代,但不要为提交而提交。
+
+> 注:`~/.dsh/skills/` 在 DSH 默认的 workspace-write 沙箱下是只读的;写不进去时向用户申请
+> 一次提权(或把改动内容交给用户执行),不要静默放弃。
