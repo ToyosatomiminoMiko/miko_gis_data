@@ -37,6 +37,7 @@ python3 ~/.dsh/skills/miko-gis-data/gis_data.py all       # download -> publish 
 | --- | --- |
 | `SKILL.md` | 技能说明: 命令, 数据根契约, 数据源与许可, 区域清单, manifest 格式, 已知坑 |
 | `gis_data.py` | 唯一下载脚本 (标准库; 调用外部 `wget`/`unzip`) |
+| `references/observations.md` | 偶然观察记录:未验证的发现先放这里,不是规则集 |
 | `LICENSE` | GPL-3.0 |
 
 区域: `america_army`, `myanmar`, `ukraine`, `ussr`, `volga`; 数据源: Natural Earth
